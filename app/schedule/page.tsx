@@ -40,7 +40,8 @@ export default function SchedulePage() {
       setActivities(mockActivities?.data);
       setGyms(mockGyms?.data);
 
-      const scheduledRes = await api.get('/api/scheduled-workouts');
+      const scheduledRes = await api.get('/scheduled-workouts');
+
       if (!scheduledRes) throw new Error('Failed to fetch scheduled workouts');
       const scheduledList: Workout[] = await scheduledRes.data;
       setScheduled(scheduledList);
@@ -73,17 +74,13 @@ export default function SchedulePage() {
     try {
       setSubmitting(true);
 
-      const res = await fetch('/api/scheduled-workouts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          activityId: Number(form.activityId),
-          gymId: Number(form.gymId),
-          datetime: form.datetime,
-        }),
+      const res = await api.post('/scheduled-workouts', {
+        activityId: Number(form.activityId),
+        gymId: Number(form.gymId),
+        datetime: form.datetime,
       });
 
-      if (!res.ok) throw new Error('Failed to schedule');
+      if (!res) throw new Error('Failed to schedule');
 
       toast.success('Workout scheduled successfully!');
       setForm({ activityId: '', gymId: '', datetime: '' });
