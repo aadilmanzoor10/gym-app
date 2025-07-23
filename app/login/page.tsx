@@ -1,0 +1,104 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { api } from '@/lib/api';
+import { useAuth } from '@/components/AuthProvider';
+import { useRouter } from 'next/navigation';
+
+const schema = z.object({
+  email: z.string().email(),
+  password: z.string().min(6),
+});
+
+type FormData = z.infer<typeof schema>;
+
+export default function LoginPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const { login } = useAuth();
+  const router = useRouter();
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      const res = await api.get(
+        `/users?email=${data.email}&password=${data.password}`
+      );
+      const user = res.data[0];
+      if (user) {
+        const fakeToken = `jwt-token-${user.id}`;
+        login({ email: user.email, token: fakeToken });
+        router.push('/dashboard');
+      } else {
+        alert('Invalid credentials');
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      alert('Login failed');
+    }
+  };
+
+  return (
+    <main className="min-h-screen flex items-center justify-center px-4 bg-gray-50">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-white shadow-md p-6 rounded-lg w-full max-w-md space-y-4"
+      >
+        <h2 className="text-2xl font-semibold text-center text-indigo-600 mb-4">
+          Log In
+        </h2>
+
+        <div>
+          <label className="block mb-1 font-medium text-gray-900">Email</label>
+          <input
+            {...register('email')}
+            type="email"
+            placeholder="you@example.com"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+
+          {errors.email && (
+            <p className="text-sm text-red-500">{errors.email.message}</p>
+          )}
+        </div>
+
+        <div>
+          <label className="block mb-1 font-medium text-gray-900">
+            Password
+          </label>
+          <input
+            {...register('password')}
+            type="password"
+            placeholder="••••••••"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+
+          {errors.password && (
+            <p className="text-sm text-red-500">{errors.password.message}</p>
+          )}
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700"
+        >
+          Log In
+        </button>
+
+        <p className="text-sm text-center mt-4 text-gray-900">
+          Don’t have an account?{' '}
+          <a href="/signup" className="text-indigo-600 hover:underline">
+            Sign Up
+          </a>
+        </p>
+      </form>
+    </main>
+  );
+}

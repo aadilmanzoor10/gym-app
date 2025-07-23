@@ -1,0 +1,133 @@
+{
+  "users": [
+    {
+      "id": "1639",
+      "email": "adeeladi0014@gmail.com",
+      "password": "Aadi12345678"
+    },
+    {
+      "id": "fdbf",
+      "email": "adeeladi0014@gmail.com",
+      "password": "Aadi12345678"
+    },
+    {
+      "id": "5deb",
+      "email": "adeeladi0014@gmail.com",
+      "password": "Aadi12345678"
+    },
+    {
+      "id": "6845",
+      "email": "adeeladi0014@gmail.com",
+      "password": "Aadi12345678"
+    },
+    {
+      "id": "f54c",
+      "email": "adiawesome0014@gmail.com",
+      "password": "Aadi12345678"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "name": "Morning Yoga",
+      "category": "Yoga",
+      "time": "08:00 AM",
+      "gymId": 1
+    },
+    {
+      "id": 2,
+      "name": "HIIT Training",
+      "category": "Cardio",
+      "time": "10:00 AM",
+      "gymId": 2
+    },
+    {
+      "id": 3,
+      "name": "Evening Weightlifting",
+      "category": "Strength",
+      "time": "06:00 PM",
+      "gymId": 1
+    }
+  ],
+  "gyms": [
+    {
+      "id": 1,
+      "name": "Power Gym",
+      "location": "Lahore",
+      "coordinates": [
+        31.5204,
+        74.3587
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Iron Temple",
+      "location": "Karachi",
+      "coordinates": [
+        24.8607,
+        67.0011
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Downtown Fitness Club",
+      "location": "Islamabad",
+      "coordinates": [
+        33.6844,
+        73.0479
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Uptown Gym & Wellness",
+      "location": "Rawalpindi",
+      "coordinates": [
+        33.5651,
+        73.0169
+      ]
+    },
+    {
+      "id": 5,
+      "name": "City Center Gym",
+      "location": "Faisalabad",
+      "coordinates": [
+        31.4504,
+        73.135
+      ]
+    }
+  ],
+  "mockActivities": [
+    {
+      "id": 1,
+      "name": "Cardio Blast"
+    },
+    {
+      "id": 2,
+      "name": "Yoga Flow"
+    },
+    {
+      "id": 3,
+      "name": "HIIT Training"
+    },
+    {
+      "id": 4,
+      "name": "Strength Training"
+    }
+  ],
+  "scheduled-workouts": [
+    {
+      "id": 1,
+      "userId": "1639",
+      "activityId": 2,
+      "gymId": 1,
+      "datetime": "2025-07-24T08:00:00"
+    },
+    {
+      "id": 2,
+      "userId": "fdbf",
+      "activityId": 3,
+      "gymId": 2,
+      "datetime": "2025-07-25T10:00:00"
+    }
+  ]
+}

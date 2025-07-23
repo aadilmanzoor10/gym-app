@@ -1,103 +1,90 @@
-import Image from "next/image";
+import Navbar from '@/components/NavBar';
+import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-white text-gray-900">
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="flex flex-col items-center justify-center px-4 pt-32 pb-20 text-center bg-gradient-to-b from-indigo-100 to-white">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+          Unlock Your Best Self with{' '}
+          <span className="text-indigo-600">Gym App</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8">
+          Join thousands of fitness enthusiasts booking classes, tracking
+          workouts, and discovering the best gyms near them.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link href="/signup">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg">
+              Get Started
+            </button>
+          </Link>
+          <Link href="/login">
+            <button className="bg-white border border-indigo-600 text-indigo-600 hover:bg-indigo-100 font-semibold px-6 py-3 rounded-lg">
+              I already have an account
+            </button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <section id="features" className="py-20 px-4 bg-gray-50 text-center">
+        <h2 className="text-3xl font-bold mb-10">Why Choose Gym App?</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Smart Scheduling</h3>
+            <p className="text-gray-600">
+              Book your favorite gym classes and activities effortlessly with
+              real-time scheduling.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Find Nearby Gyms</h3>
+            <p className="text-gray-600">
+              Discover gyms near you using our interactive map and filter
+              options.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Mobile First</h3>
+            <p className="text-gray-600">
+              Fully responsive design optimized for your mobile experience on
+              the go.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-white">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          What Our Users Say
+        </h2>
+        <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+          <blockquote className="bg-indigo-50 p-6 rounded-xl shadow-sm">
+            <p className="italic text-gray-700">
+              “Gym App changed the way I book classes. It’s fast, intuitive, and
+              always reliable.”
+            </p>
+            <footer className="mt-4 text-right text-sm font-semibold text-indigo-600">
+              — Sarah, CrossFit Coach
+            </footer>
+          </blockquote>
+          <blockquote className="bg-indigo-50 p-6 rounded-xl shadow-sm">
+            <p className="italic text-gray-700">
+              “I love being able to find gyms on the go and schedule my
+              workouts. 10/10 experience!”
+            </p>
+            <footer className="mt-4 text-right text-sm font-semibold text-indigo-600">
+              — Ahmad, Fitness Enthusiast
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <footer className="py-8 bg-gray-100 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Gym App. All rights reserved.
       </footer>
-    </div>
+    </main>
   );
 }
