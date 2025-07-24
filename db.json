@@ -24,25 +24,35 @@
       "id": "f54c",
       "email": "adiawesome0014@gmail.com",
       "password": "Aadi12345678"
+    },
+    {
+      "id": "ce5f",
+      "email": "adiawesome0014@gmail.com",
+      "password": "Aadi12345678"
+    },
+    {
+      "id": "a919",
+      "email": "adeeladi0014@gmail.com",
+      "password": "Aadi12345678"
     }
   ],
   "activities": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Morning Yoga",
       "category": "Yoga",
       "time": "08:00 AM",
       "gymId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "HIIT Training",
       "category": "Cardio",
       "time": "10:00 AM",
       "gymId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Evening Weightlifting",
       "category": "Strength",
       "time": "06:00 PM",
@@ -51,7 +61,7 @@
   ],
   "gyms": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Power Gym",
       "location": "Lahore",
       "coordinates": [
@@ -60,7 +70,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Iron Temple",
       "location": "Karachi",
       "coordinates": [
@@ -69,7 +79,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Downtown Fitness Club",
       "location": "Islamabad",
       "coordinates": [
@@ -78,7 +88,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Uptown Gym & Wellness",
       "location": "Rawalpindi",
       "coordinates": [
@@ -87,7 +97,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "City Center Gym",
       "location": "Faisalabad",
       "coordinates": [
@@ -98,32 +108,32 @@
   ],
   "mockActivities": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Cardio Blast"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Yoga Flow"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "HIIT Training"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Strength Training"
     }
   ],
   "scheduled-workouts": [
     {
-      "id": 1,
+      "id": "1",
       "userId": "1639",
       "activityId": 2,
       "gymId": 1,
       "datetime": "2025-07-24T08:00:00"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": "fdbf",
       "activityId": 3,
       "gymId": 2,
@@ -140,6 +150,12 @@
       "activityId": 3,
       "gymId": 2,
       "datetime": "2025-07-25T02:55"
+    },
+    {
+      "id": "4e49",
+      "activityId": 1,
+      "gymId": 4,
+      "datetime": "2025-07-26T02:59"
     }
   ]
 }
